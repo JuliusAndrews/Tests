@@ -12,10 +12,10 @@ public class BMICalculator {
     }
     // This is our main method
         public static void main(String[] args){
-            BMICalculator calculator = new BMICalculator(60, 1.70);
+            BMICalculator calculator = new BMICalculator(120, 1.70);
             double bmi = calculator.calculateBMI();
 
             //print BMI to screen
-            System.out.println("Your BMI is " + bmi + ".");
+            System.out.println("Your MOMS BMI is " + bmi + ".");
         }
 }
