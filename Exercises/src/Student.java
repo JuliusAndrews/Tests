@@ -1,6 +1,8 @@
-import jdk.javadoc.internal.doclets.formats.html.resources.standard;
-
 class Student {
+    /**
+     *
+     */
+    private static final String MESSAGE = "The student object referred to by the variable secondStudent has the first name: ";
     int id;
     String firstName;
     String lastName;
@@ -28,6 +30,6 @@ class Student {
         secondStudent.id = 2;
         secondStudent.firstName = "Maquire";
 
-        System.out.println("The student object referred to by the variable secondStudent has the first name: " + secondStudent.firstName); 
+        System.out.println(MESSAGE + secondStudent.firstName); 
     }
 }
