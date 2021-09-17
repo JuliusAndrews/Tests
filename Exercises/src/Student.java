@@ -1,35 +1,30 @@
 class Student {
-    /**
-     *
-     */
-    private static final String MESSAGE = "The student object referred to by the variable secondStudent has the first name: ";
-    int id;
-    String firstName;
-    String lastName;
-    int birthYear, birthMonth, birthDay;
+    static int nextId = 0;
+ 
+    final int id;
+    final String firstName, lastName;
 
-    boolean isBirthday(){
-        // Return true if it's the student's birthday today
-        return false;
+    Student(String fn, String ln) {
+        id = nextId;
+        nextId++;
+
+        firstName = fn;
+        lastName = ln;
     }
 
-    void giveWarning(boolean isFinalWarning) {
-        //You should study harder!
+    String getFirstName() {
+        return firstName;
     }
 
-    int numberOfFriends() {
-        //Return the number of friends the student has
-        return 0;
+    String getLastName() {
+        return lastName;
     }
 
-    public static void main(String[] args) {
-        Student firstStudent = new Student();
-        Student secondStudent = new Student();
-        firstStudent.id = 1;
-        firstStudent.firstName = "Tobey";
-        secondStudent.id = 2;
-        secondStudent.firstName = "Maquire";
+    void registerForCourse(Course c) {
+        c.registerStudent(this);
+    }
 
-        System.out.println(MESSAGE + secondStudent.firstName); 
+    void unregisterForCourse(Course c) {
+        c.unregisterStudent(this);
     }
 }
